@@ -87,3 +87,19 @@ var f3 = function(n1, n2) {
 let f3 = (n1, n2) => n1 + n2;
 ```
 谁调用，指向谁。
+### 数组去重
+```
+var arr1 = [2, 3, 4, 4, 4, 4, 5, 5, 5, 5];
+var arr2 = [...new Set(arr1)];
+```
+### map
+```
+const m = new Map();
+m.set("name", "m").set("age", 18);
+```
+### for of
+```
+for (let [key, value] of m) {
+  
+}
+```
