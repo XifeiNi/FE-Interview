@@ -43,7 +43,7 @@ function whatever() {
 whatever(); // 100
 console.log(n) // exception
 ```
-`let`属于块级作用域
+  `let`属于块级作用域
 ```
 function whatever() {
   let n = 30;
@@ -54,4 +54,15 @@ function whatever() {
 }
 whatever(); // 10
 ```
-
+### `const`  
+Read only constant
+```
+const w = 100;
+w = 100; // Error
+const r; // Error, 一定要有赋值处理。
+```
+`const`的指向是stack内存，实际改的时候是heap内存。top 和bottom level const
+```
+const obj = {};
+obj.name = "whatever"；// OK
+```
