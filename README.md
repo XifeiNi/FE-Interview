@@ -66,3 +66,24 @@ const r; // Error, 一定要有赋值处理。
 const obj = {};
 obj.name = "whatever"；// OK
 ```
+### Arrow Function
+简化了函数的定义
+```
+let f = v => v; // let函数名 = 参数 => 返回值
+// equivalent to below
+var f = function(v) {
+    return v;
+  }；
+```
+```
+var f2 = function() {
+    return 123;
+  }；
+let f2 = () => 123;
+
+var f3 = function(n1, n2) {
+    return n1 + n2;
+  };
+let f3 = (n1, n2) => n1 + n2;
+```
+谁调用，指向谁。
