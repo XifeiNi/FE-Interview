@@ -113,11 +113,11 @@ for (let [key, value] of m) {
 debounce  
 ```
 function debounce(func, wait) {
-  let timeout;
+  let timeout; // 定时器
   return function() {
-    if (timeout) clearTimeout(timeout);
+    if (timeout) clearTimeout(timeout); // 取消之前的调用任务
     timeout = setTimeout(function() {
-      func.apply(this, arguments);
+      func.apply(this); // 执行func这个函数。
     }, wait)
   }
 }
