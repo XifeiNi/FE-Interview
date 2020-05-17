@@ -109,7 +109,7 @@ for (let [key, value] of m) {
 节流： 连续发生的事件，在n秒内只执行一次函数。  
 应用： 即时查询：比如搜索，出现一下查一次，出现两下查两次-->后端调用次数过多。  
 
-### 输入完一秒再调用
+### 输入完一秒再调用 （debounce）
 debounce  
 ```
 function debounce(func, wait) {
@@ -121,7 +121,24 @@ function debounce(func, wait) {
     }, wait)
   }
 }
-
+// 调用
+debounce(需要调用的函数名字，1000)； 
 ```
+### 输入完立即查询，但下一次查询要等2秒 （debounce）
+```
+function debounce(func, wait) {
+  let timeout;
+  return function() {
+    if (timeout) clearTimeout(timeout);
+    let callNow = ! timeout; // js类型转换。判断当前有没有定时器。
+    timeout = setTimeout(() => {
+      timeout = null; //清空当时定时器
+    }, wait);
+    if (callNow) func.apply(this); // 第一次执行
+  }
+}
+```
+
+
 
 
