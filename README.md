@@ -153,6 +153,19 @@ function throttle(func, wait) {
   }
 }
 ```
+```
+// 时间戳
+frunction throttle(func, wait) {
+  let prev = 0;
+  return function() {
+    let now = Date.now();
+    if (now - prev > wait){
+      func.apply(this);
+      prev = now;
+    }
+  }
+}
+```
 
 
 
