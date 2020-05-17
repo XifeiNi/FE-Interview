@@ -138,7 +138,21 @@ function debounce(func, wait) {
   }
 }
 ```
-
+### 节流
+```
+// 定时器实现 ： 固定时间发送请求
+function throttle(func, wait) {
+  let timeout;
+  return function() {
+    if (!timeout) {
+      timeout = setTimeout(() => {
+        timeout = null;
+        func.apply(this);
+      }, wait)
+    }
+  }
+}
+```
 
 
 
