@@ -235,7 +235,38 @@ var obj = {
 var f2 = obj.f;
 var a = "hello";
 f2(); // 无调用者，this为全局。
+obj.f2(); // 有调用者
 // print hello
+// print 2
+```
+```
+function f(s) {
+  console.log(this.a, s);
+  return this.a + s;
+}
+
+var obj = {
+  a : 2
+}
+
+var f2 = function() { 
+  return f.apply(obj, arguments); // 相当于obj调用函数
+} 
+
+var b = f2(3);
+console.log(b);
+
+```
+
+```
+obj = {name: 'abc'}
+// apply 执行一个函数
+function test() {
+  console.log(this.name);  
+}
+
+test();
+test.apply(obj); // 改变指针
 ```
 
 
