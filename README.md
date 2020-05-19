@@ -167,5 +167,40 @@ frunction throttle(func, wait) {
 }
 ```
 
+## 模拟题1
+```
+var n = 123; // 全局
+function f1() {
+  console.log(n);
+}
+
+function f2() {
+  var n = 456;
+  f1(); // f1 在f2中执行，没有调用者，作用域为全局。
+}
+f2(); // 没有调用者，作用者，window
+
+// 考察点：预解析，作用域
+
+// print 123 123
+```
+
+```
+var n = 123; // 全局
+function f1() {
+  console.log(n);
+}
+
+function f2() {
+  var n = 456;
+  f1(n); // f1 在f2中执行，没有调用者，作用域为全局。
+}
+f2(); // 没有调用者，作用者，window
+
+// 考察点：预解析，作用域
+
+// print 123 123
+```
+
 
 
