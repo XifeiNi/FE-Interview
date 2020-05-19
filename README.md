@@ -290,4 +290,24 @@ test();
 test.call(obj, 1, 2); // 改变指针
 ```
 
+```
+function f(s) {
+  console.log(this.a, s);
+  return this.a + s;
+}
+
+var obj = {
+  a : 2
+}
+
+var f2 = function() { 
+  return f.call(obj, ...arguments); // 相当于obj调用函数
+} 
+
+var b = f2(3);
+console.log(b);
+
+```
+
+
 
