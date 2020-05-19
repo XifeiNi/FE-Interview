@@ -209,16 +209,33 @@ function f1() {
   console.log(this.length);
 }
 
-// arguments --- js内置对象，参数数组
+// arguments --- js内置对象，参数数组, 实际上是一个对象
 var obj = {
   x: 10,
   f2: function(f1) {
-    f1();
-    arguments[0]();
+    console.log(this); // obj
+    f1(); // 无调用者 this = window => 100
+    arguments[0](); // arguments[0] = f1 无调用者 作用域arguments对象
   }
 }
 
 obj.f2(f1, 1);
+```
+
+```
+function f2() {
+  console.log(this.a); // this==window
+}
+
+var obj = {
+  a: 2,
+  f: f
+}
+
+var f2 = obj.f;
+var a = "hello";
+f2(); // 无调用者，this为全局。
+// print hello
 ```
 
 
