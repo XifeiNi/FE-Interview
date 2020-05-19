@@ -202,5 +202,23 @@ f2(); // 没有调用者，作用者，window
 // print 123 123
 ```
 
+## 模拟题2
+```
+var length = 100;
+function f1() {
+  console.log(this.length);
+}
+
+// arguments --- js内置对象，参数数组
+var obj = {
+  x: 10,
+  f2: function(f1) {
+    f1();
+    arguments[0]();
+  }
+}
+
+obj.f2(f1, 1);
+```
 
 
