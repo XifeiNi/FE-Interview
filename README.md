@@ -268,5 +268,26 @@ function test() {
 test();
 test.apply(obj); // 改变指针
 ```
+call 和 apply传入参数方式不一样
+```
+obj = {name: 'abc'}
+// apply 执行一个函数
+function test(a, b) {
+  console.log(this.name, a, b);  
+}
+
+test();
+test.apply(obj, [1, 2]); // 改变指针
+```
+```
+obj = {name: 'abc'}
+// apply 执行一个函数
+function test(a, b) {
+  console.log(this.name, a, b);  
+}
+
+test();
+test.call(obj, 1, 2); // 改变指针
+```
 
 
