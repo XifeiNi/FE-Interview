@@ -308,6 +308,15 @@ var b = f2(3);
 console.log(b);
 
 ```
+### 模拟题2
+```
+(function() {
+  // a的作用域， 函数作用域
+  var a = b = 3; // b = 3; var a = b;
+})();
+console.log(a, b);
+// undefined, 3
+```
 
 
 
