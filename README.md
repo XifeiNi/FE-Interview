@@ -317,6 +317,18 @@ console.log(b);
 console.log(a, b);
 // undefined, 3
 ```
-
+js线程
+```
+for (var i = 1; i <= 3; i++) {
+  // 异步
+  setTimeout(function() {
+    console.log(i);
+  }, 0);
+}
+// print 4 4 4 
+```
+js是单线程，分有主线程和等待队列。  
+主线程执行完后才会执行等待队列  
+异步的内容都会放入等待队列  
 
 
