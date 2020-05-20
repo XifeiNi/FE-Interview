@@ -334,6 +334,12 @@ js是单线程，分有主线程和等待队列。
 (function d(num) {
   console.log(num);
   var num = 10;
-})(100);
+}(100));
 // 自执行函数，无调用者，预解析
+// 也可以这样写
+(function d(num) {
+  console.log(num);
+  var num = 10;
+})(100);
 ```
+
