@@ -372,6 +372,16 @@ function m() {
 }
 fm();
 // 预解析 作用域
+// 代码块里没有预解析，没有变量提升
 // undefined, undefined, undefined, undefined, 10, undefined, fn
+```
+```
+(function f(num) {
+  function num() {}
+  console.log(num);
+  var num = 10;
+  console.log(num);
+})(100)
+// function num(), 10
 ```
 
