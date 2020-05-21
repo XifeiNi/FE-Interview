@@ -425,3 +425,8 @@ console.log(R.fn('a')); // print 1
 ```
 ## 前端跨域的多种实现方式
 协议 域名 端口 一个不同即是跨域。
+1. webpack proxy  
+2. jsonp  
+3. nginx 反向代理  
+4. webpack plugin  
+5. cors  
