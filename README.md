@@ -386,11 +386,27 @@ fm();
 ```
 ```
 (function f(num) {
-  console.log(num);
+  console.log(num); // 打印优先级最高的。
   function num() {}
   var num = 10;
   console.log(num);
 })(100)
 // function num(), 10
 // function 的变量提升最高
+// 优先级没有变
+// 代码解释器会优化
+```
+```
+function n() {
+  if (2 > 1) {
+    arr = 10;
+    brr = 10;
+    let arr; // throw exception... let需要先定义后使用
+    var brr;
+    console.log(arr);
+    console.log(brr);
+  }
+}
+n();
+// 考点：预解析， 变量声明 let没有变量提升
 ```
