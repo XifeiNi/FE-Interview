@@ -384,4 +384,13 @@ fm();
 })(100)
 // function num(), 10
 ```
-
+```
+(function f(num) {
+  console.log(num);
+  function num() {}
+  var num = 10;
+  console.log(num);
+})(100)
+// function num(), 10
+// function 的变量提升最高
+```
