@@ -356,12 +356,12 @@ function m() {
   console.log(a2);
   console.log(b1);
   console.log(b2);
-  if (false) {
+  if (false) { // 预解析的时候不执行
     function b1(){}
     var a1 = 100;
   }
   
-  if (true) {
+  if (true) { // 
     function b2(){}
     var a2 = 10;
   }
@@ -370,5 +370,8 @@ function m() {
   console.log(b1);
   console.log(b2);
 }
+fm();
+// 预解析 作用域
+// undefined, undefined, undefined, undefined, 10, undefined, fn
 ```
 
