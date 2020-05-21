@@ -410,3 +410,16 @@ function n() {
 n();
 // 考点：预解析， 变量声明 let没有变量提升
 ```
+```
+var R = (function() {
+  var u = {a : 1, b : 2};
+  var r = {
+    fn: function(k) {
+      return u[k]; // 可以访问u
+    }
+   return r;
+  }
+})();
+console.log(R.fn('a')); // print 1
+// 考点：自执行，闭包
+```
