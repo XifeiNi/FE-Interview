@@ -342,4 +342,33 @@ js是单线程，分有主线程和等待队列。
   var num = 10;
 })(100);
 ```
+```
+(function e(num) {
+  console.log(num); // fn
+  var num = 10;
+  function num(){}
+})(100);
+// 预解析，函数优先级最高
+```
+```
+function m() {
+  console.log(a1);
+  console.log(a2);
+  console.log(b1);
+  console.log(b2);
+  if (false) {
+    function b1(){}
+    var a1 = 100;
+  }
+  
+  if (true) {
+    function b2(){}
+    var a2 = 10;
+  }
+  console.log(a1);
+  console.log(a2);
+  console.log(b1);
+  console.log(b2);
+}
+```
 
